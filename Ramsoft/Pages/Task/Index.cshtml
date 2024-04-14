@@ -17,9 +17,9 @@
         <div>
             <a asp-page="/Task/Details" asp-route-Id="@task.TaskId" class="btn btn-primary m-1">View</a>
             <a asp-page="/Task/Edit" asp-route-Id="@task.TaskId" class="btn btn-primary m-1">Edit</a>
-            <a href="#" class="btn btn-primary m-1">Delete</a>
+            <a asp-page="/Task/Delete" asp-route-Id="@task.TaskId" class="btn btn-primary m-1">Delete</a>
         </div>
     }
-    <a asp-page="/Task/AddTask" class="btn btn-primary m-1">Add</a>
+    <a asp-page="/Task/Edit" class="btn btn-primary m-1">Add</a>
 
 </div>

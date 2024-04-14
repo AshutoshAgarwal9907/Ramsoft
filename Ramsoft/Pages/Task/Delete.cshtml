@@ -1,0 +1,13 @@
+﻿@page "{id}"
+@model Ramsoft.Pages.Task.DeleteModel
+@{
+}
+<h1>Delete Alert</h1>
+
+<div>
+    <h5>Are you sure you want to delete the Task +@Model.Task.TaskId</h5>
+    <form method="post">
+        <button type="submit" class="btn btn-danger" asp-route-Id="@Model.Task.TaskId">Yes</button>
+        <a class="btn btn-primary" asp-page="/Task/Index" >No</a>
+    </form>
+</div>

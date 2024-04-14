@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ramsoft.Models", "Ramsoft.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ramsoft.Services", "Ramsoft.Services\Ramsoft.Services.csproj", "{143F06CE-7E31-40B2-81FE-77A3E53FFA98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ramsoft.nUnitTest", "Ramsoft.nUnitTest\Ramsoft.nUnitTest.csproj", "{AE3EA4E9-1646-4525-B5C4-DAFA8E1995A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{143F06CE-7E31-40B2-81FE-77A3E53FFA98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{143F06CE-7E31-40B2-81FE-77A3E53FFA98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{143F06CE-7E31-40B2-81FE-77A3E53FFA98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE3EA4E9-1646-4525-B5C4-DAFA8E1995A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE3EA4E9-1646-4525-B5C4-DAFA8E1995A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE3EA4E9-1646-4525-B5C4-DAFA8E1995A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE3EA4E9-1646-4525-B5C4-DAFA8E1995A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

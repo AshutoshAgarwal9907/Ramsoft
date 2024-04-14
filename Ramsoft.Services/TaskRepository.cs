@@ -1,9 +1,4 @@
 ﻿using Ramsoft.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ramsoft.Services
 {
@@ -49,11 +44,27 @@ namespace Ramsoft.Services
             if(newTask.TaskName != null)
             {
                 //newTask.TaskId = _tasksList.Max().TaskId+1;
-                newTask.TaskId  = _tasksList.Max(e=>e.TaskId)+1;
+                if (_tasksList.Count>0)
+                {
+                    newTask.TaskId = _tasksList.Max(e => e.TaskId) + 1;
+                }
+                else {
+                    newTask.TaskId = 1;
+                }
 
                 _tasksList.Add(newTask);
             }       
           
+        }
+
+        public TaskModel DeleteTask(int id)
+        {
+            TaskModel taskToBeDeleted = _tasksList.FirstOrDefault(e=>e.TaskId==id); 
+            if(taskToBeDeleted != null)
+            {
+                _tasksList.Remove(taskToBeDeleted);
+            }
+            return taskToBeDeleted;
         }
     }
 }

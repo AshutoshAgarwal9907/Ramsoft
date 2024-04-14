@@ -12,9 +12,9 @@ namespace Ramsoft.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            Message = "Welcome world" + DateTime.Now;
+            return RedirectToPage("/Task/Index");
         }
     }
 }

@@ -10,5 +10,7 @@ namespace Ramsoft.Services
         TaskModel UpdateTaskDetails(TaskModel updatedTask);
 
         void AddTask(TaskModel task);
+
+        TaskModel DeleteTask(int id);
     }
 }
