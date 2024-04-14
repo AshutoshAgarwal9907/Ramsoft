@@ -11,8 +11,9 @@
     @foreach(var task in Model.Tasks)
     {
         <div>
-            <span class="w-25 h-25 text-lg-start">@task.TaskName</span>
-            <span class="">@task.State</span>
+            <div class="text-xl-start ">Task Name:- @task.TaskName</div>
+
+            <div class="text-xl-start">State:- @task.State</div>
         </div>
         <div>
             <a asp-page="/Task/Details" asp-route-Id="@task.TaskId" class="btn btn-primary m-1">View</a>
