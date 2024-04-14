@@ -12,8 +12,7 @@ namespace Ramsoft.Models
         public string? Description { get; set; }
         public TaskState? State { get; set; }
         public DateTime? Deadline { get; set; }
-
-        public bool? IsFavourite { get; set; }
+        public bool IsFavourite { get; set; }
 
         
     }

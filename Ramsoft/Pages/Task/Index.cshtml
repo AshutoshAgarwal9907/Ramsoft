@@ -6,21 +6,101 @@
 <h1>All Task</h1>
 
 @*<h2>@Model.Tasks.Count()</h2>*@
-
-<div class=""> 
-    @foreach(var task in Model.Tasks)
-    {
-        <div>
-            <div class="text-xl-start ">Task Name:- @task.TaskName</div>
-            <div class="text-xl-start">State:- @task.State</div>
-            <div class="text-xl-start">IsFavourite:- @task.IsFavourite</div>
-        </div>
-        <div>
-            <a asp-page="/Task/Details" asp-route-Id="@task.TaskId" class="btn btn-primary m-1">View</a>
-            <a asp-page="/Task/Edit" asp-route-Id="@task.TaskId" class="btn btn-primary m-1">Edit</a>
-            <a asp-page="/Task/Delete" asp-route-Id="@task.TaskId" class="btn btn-primary m-1">Delete</a>
-        </div>
+<style>
+    .selected {
+        background-color: lightblue;
+        cursor: pointer;
     }
+</style>
+<div class=""> 
+    <table class="table" id="taskTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>State</th>
+                <th>Favorite</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model.Tasks)
+            {
+                <tr data-task-id="@task.TaskId" onclick="selectRow(this)">
+                    <td>@task.TaskName</td>
+                    <td>@task.State</td>
+                    <td>@(task.IsFavourite ? "Yes" : "No")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="text-center mb-3">
+        <a id="viewBtn" class="btn btn-primary m-1">View</a>
+        <a id="editBtn" class="btn btn-primary m-1">Edit</a>
+        <a id="deleteBtn" class="btn btn-primary m-1">Delete</a>
+    </div>
     <a asp-page="/Task/Edit" class="btn btn-primary m-1">Add</a>
 
 </div>
+<script>
+     function sortTasks(sortBy) {
+        var rows = Array.from(document.querySelectorAll('tbody tr'));
+        var sortMultiplier = 1;
+        if (sortBy === 'name') {
+            sortMultiplier = 1; // Ascending order for name
+        } else if (sortBy === 'state') {
+            sortMultiplier = -1; // Descending order for state
+        }
+        rows.sort(function (a, b) {
+            var aValue = a.cells[sortBy === 'name' ? 0 : 1].textContent;
+            var bValue = b.cells[sortBy === 'name' ? 0 : 1].textContent;
+            return sortMultiplier * aValue.localeCompare(bValue);
+        });
+        rows.forEach(function (row) {
+            document.querySelector('tbody').appendChild(row);
+        });
+    }
+
+    document.getElementById('viewBtn').addEventListener('click', function () {
+        // Get the selected row
+        var selectedRow = document.querySelector('tr.selected');
+        if (selectedRow) {
+            var taskId = selectedRow.getAttribute('data-task-id');
+            window.location.href = '/Task/Details?id=' + taskId;
+        } else {
+            alert('Please select a task to view.');
+        }
+    });
+
+    document.getElementById('editBtn').addEventListener('click', function () {
+        // Get the selected row
+        var selectedRow = document.querySelector('tr.selected');
+        if (selectedRow) {
+            var taskId = selectedRow.getAttribute('data-task-id');
+            window.location.href = '/Task/Edit?id=' + taskId;
+        } else {
+            alert('Please select a task to edit.');
+        }
+    });
+
+    document.getElementById('deleteBtn').addEventListener('click', function () {
+        // Get the selected row
+        var selectedRow = document.querySelector('tr.selected');
+        if (selectedRow) {
+            var taskId = selectedRow.getAttribute('data-task-id');
+                window.location.href = '/Task/Delete?id=' + taskId;
+            
+        } else {
+            alert('Please select a task to delete.');
+        }
+    });
+
+    function selectRow(row) {
+        // Clear previously selected rows (optional)
+        var selectedRows = document.querySelectorAll('tr.selected');
+        selectedRows.forEach(function (row) {
+            row.classList.remove('selected');
+        });
+
+        // Highlight the selected row
+        row.classList.add('selected');
+    }
+</script>
