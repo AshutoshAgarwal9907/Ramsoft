@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Ramsoft.Models;
 using Ramsoft.Services;
+using System.Threading.Tasks;
 
 namespace Ramsoft.Pages.Task
 {
@@ -16,7 +17,8 @@ namespace Ramsoft.Pages.Task
 
         public void OnGet()
         {
-            Tasks = taskRepository.GetAllTasks();
+            Tasks = taskRepository.GetAllTasks().OrderByDescending(e=>e.IsFavourite);
+                       
         }
     }
 }

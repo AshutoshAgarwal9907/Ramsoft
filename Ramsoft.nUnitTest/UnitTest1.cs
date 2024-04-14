@@ -75,6 +75,7 @@ namespace Ramsoft.nUnitTest
                 TaskName = "New Task",
                 Description = "New Task Description",
                 State = TaskState.ToDo,
+                IsFavourite = false,
                 Deadline = DateTime.Now.AddDays(7)
             };
             int initialCount = _repository.GetAllTasks().Count();
@@ -97,6 +98,7 @@ namespace Ramsoft.nUnitTest
                 TaskId = existingTask.TaskId,
                 TaskName = "Updated Task Name",
                 Description = "Updated Description",
+                IsFavourite=false,
                 State = TaskState.InProgress,
                 Deadline = DateTime.Now.AddDays(14)
             };
@@ -109,6 +111,7 @@ namespace Ramsoft.nUnitTest
             Assert.AreEqual(updatedTask.TaskName, retrievedTask.TaskName); 
             Assert.AreEqual(updatedTask.Description, retrievedTask.Description);
             Assert.AreEqual(updatedTask.State, retrievedTask.State);
+            Assert.AreEqual(updatedTask.IsFavourite, retrievedTask.IsFavourite);
             Assert.AreEqual(updatedTask.Deadline, retrievedTask.Deadline);
         }
 

@@ -10,9 +10,9 @@ namespace Ramsoft.Services
         {
             _tasksList = new List<TaskModel>()
             {
-                new TaskModel (){TaskId=1,TaskName="Task12",Description="Description",State=TaskState.InProgress, Deadline=DateTime.Now},
-                new TaskModel (){TaskId=2,TaskName="Task13",Description="Description",State=TaskState.InProgress, Deadline=DateTime.Now},
-                new TaskModel (){TaskId=3,TaskName="Task14",Description="Description",State=TaskState.InProgress, Deadline=DateTime.Now}
+                new TaskModel (){TaskId=1,TaskName="Task12",Description="Description",State=TaskState.InProgress,IsFavourite=true, Deadline=DateTime.Now},
+                new TaskModel (){TaskId=2,TaskName="Task13",Description="Description",State=TaskState.InProgress,IsFavourite=false, Deadline=DateTime.Now},
+                new TaskModel (){TaskId=3,TaskName="Task14",Description="Description",State=TaskState.InProgress,IsFavourite=true, Deadline=DateTime.Now}
             };
         }
 
@@ -35,6 +35,7 @@ namespace Ramsoft.Services
                 task.TaskName = updatedTask.TaskName;
                 task.Description = updatedTask.Description;
                 task.State = updatedTask.State;
+                task.IsFavourite = updatedTask.IsFavourite;
                 task.Deadline = updatedTask.Deadline;
             }
             return task;
