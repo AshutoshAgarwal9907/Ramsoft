@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ramsoft", "Ramsoft\Ramsoft.csproj", "{E03BD31B-3A94-4CA4-82D8-9BCF7897E1DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ramsoft.Models", "Ramsoft.Models\Ramsoft.Models.csproj", "{740648C9-6F7A-4B4A-81F4-5AA00E0A98C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ramsoft.Services", "Ramsoft.Services\Ramsoft.Services.csproj", "{143F06CE-7E31-40B2-81FE-77A3E53FFA98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E03BD31B-3A94-4CA4-82D8-9BCF7897E1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E03BD31B-3A94-4CA4-82D8-9BCF7897E1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E03BD31B-3A94-4CA4-82D8-9BCF7897E1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E03BD31B-3A94-4CA4-82D8-9BCF7897E1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{740648C9-6F7A-4B4A-81F4-5AA00E0A98C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740648C9-6F7A-4B4A-81F4-5AA00E0A98C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740648C9-6F7A-4B4A-81F4-5AA00E0A98C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740648C9-6F7A-4B4A-81F4-5AA00E0A98C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{143F06CE-7E31-40B2-81FE-77A3E53FFA98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{143F06CE-7E31-40B2-81FE-77A3E53FFA98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{143F06CE-7E31-40B2-81FE-77A3E53FFA98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{143F06CE-7E31-40B2-81FE-77A3E53FFA98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {820D31DB-6362-462F-BD64-027A7E0BFEC3}
+	EndGlobalSection
+EndGlobal

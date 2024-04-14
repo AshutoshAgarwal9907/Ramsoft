@@ -1,0 +1,27 @@
+﻿@page "/Task/view/{Id}"
+@model Ramsoft.Pages.Task.DetailsModel
+@{
+
+   
+}
+
+<h1>Details</h1>
+<div class="row justify-content-center m-1">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="class-header"></div>
+            <h1>@Model.TaskDetails.TaskName</h1>
+        </div>
+        <div class="card-body text-center ">
+            <h4>TaskDescription:- @Model.TaskDetails.Description</h4>
+            <h4>DeadLine:- @Model.TaskDetails.Deadline</h4>
+            <h4></h4>
+        </div>
+        <div class="card-footer text-center">
+            <a asp-page="index" class="btn btn-primary"> Back</a>
+            <a href="#" c class="btn btn-primary"> Edit</a>
+            <a href="#" class="btn btn-primary"> Delete</a>
+        </div>
+    </div>
+
+</div>
