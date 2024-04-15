@@ -16,8 +16,12 @@
     <table class="table" id="taskTable">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>State</th>
+                <th>
+                    <a href="#" onclick="sortTasks('name')">Task Name</a>
+                </th>
+                <th>
+                    <a href="#" onclick="sortTasks('state')">State</a>
+                </th>
                 <th>Favorite</th>
             </tr>
         </thead>
@@ -41,22 +45,21 @@
 
 </div>
 <script>
-     function sortTasks(sortBy) {
+    var sortOrders = {};
+
+    function sortTasks(sortBy) {
         var rows = Array.from(document.querySelectorAll('tbody tr'));
-        var sortMultiplier = 1;
-        if (sortBy === 'name') {
-            sortMultiplier = 1; // Ascending order for name
-        } else if (sortBy === 'state') {
-            sortMultiplier = -1; // Descending order for state
-        }
+        var sortOrder = sortOrders[sortBy] || 1; 
+        sortOrder *= -1; 
         rows.sort(function (a, b) {
             var aValue = a.cells[sortBy === 'name' ? 0 : 1].textContent;
             var bValue = b.cells[sortBy === 'name' ? 0 : 1].textContent;
-            return sortMultiplier * aValue.localeCompare(bValue);
+            return sortOrder * aValue.localeCompare(bValue);
         });
         rows.forEach(function (row) {
             document.querySelector('tbody').appendChild(row);
         });
+        sortOrders[sortBy] = sortOrder; 
     }
 
     document.getElementById('viewBtn').addEventListener('click', function () {
